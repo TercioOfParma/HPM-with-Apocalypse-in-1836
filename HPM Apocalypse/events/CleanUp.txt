@@ -1,0 +1,1108 @@
+country_event = {
+	id = 60000
+	title = "EVTNAME60000"
+	desc = "EVTDESC60000"
+	news = yes
+	news_title = "EVTNAME60000_NEWS_TITLE"
+	news_desc_long = "EVTDESC60000_NEWS_LONG"
+	news_desc_medium = "EVTDESC60000_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60000_NEWS_SHORT"
+	picture = "communist_crowd"
+	
+	trigger = {
+		is_vassal = no
+		civilized = yes
+		NOT = { government = proletarian_dictatorship }
+		ruling_party_ideology = communist
+		average_militancy = 3
+		OR = {
+			num_of_revolts = 1
+			national_provinces_occupied = .10
+			is_disarmed = yes
+			communist = 20
+			socialist = 40
+			average_militancy = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.8
+			average_militancy = 4
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 6
+		}
+		modifier = {
+			factor = 0.5
+			revolt_percentage = .25
+		}
+	}
+	option = {
+		name = "EVTOPTA60000"
+		government = proletarian_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = no_slavery
+		political_reform = debtors_prisons
+		social_reform = good_minimum_wage
+		social_reform = eight_hours
+		social_reform = good_subsidies
+		social_reform = good_pensions
+		social_reform = good_health_care
+		prestige = -25
+		country_event = 800052
+	}
+}
+
+country_event = {
+	id = 60010
+	title = "EVTNAME60010"
+	desc = "EVTDESC60010"
+	news = yes
+	news_title = "EVTNAME60010_NEWS_TITLE"
+	news_desc_long = "EVTDESC60010_NEWS_LONG"
+	news_desc_medium = "EVTDESC60010_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60010_NEWS_SHORT"
+	picture = "Fascist"
+	
+	trigger = {
+		is_vassal = no
+		civilized = yes
+		government = democracy
+		ruling_party_ideology = reactionary
+		average_militancy = 3
+		OR = {
+			revolt_percentage = 0.10
+			national_provinces_occupied = 0.10
+			is_disarmed = yes
+			upper_house = { ideology = reactionary value = 0.3 }
+			average_militancy = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.8
+			average_militancy = 4
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 6
+		}
+		modifier = {
+			factor = 0.5
+			revolt_percentage = .25
+		}
+		modifier = {
+			factor = 2
+			literacy = 0.3
+		}
+		modifier = {
+			factor = 3
+			literacy = 0.5
+		}
+		modifier = {
+			factor = 4
+			literacy = 0.7
+		}
+	}
+
+	option = {
+		name = "EVT60010OPTA"
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		set_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		government = presidential_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		add_country_modifier = {
+			name = national_confusion
+			duration = 365
+		}
+		prestige = -25
+		country_event = 800050
+	}
+}
+
+country_event = {
+	id = 60020
+	title = "EVTNAME60020"
+	desc = "EVTDESC60020"
+	news = yes
+	news_title = "EVTNAME60020_NEWS_TITLE"
+	news_desc_long = "EVTDESC60020_NEWS_LONG"
+	news_desc_medium = "EVTDESC60020_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60020_NEWS_SHORT"
+	picture = "election"
+	
+	trigger = {
+		is_vassal = no
+		civilized = yes
+		NOT = { government = bourgeois_dictatorship }
+		ruling_party_ideology = anarcho_liberal
+		average_militancy = 3
+		OR = {
+			num_of_revolts = 1
+			national_provinces_occupied = .10
+			is_disarmed = yes
+			anarcho_liberal = 20
+			average_militancy = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.8
+			average_militancy = 4
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 6
+		}
+		modifier = {
+			factor = 0.5
+			revolt_percentage = .25
+		}
+	}
+	major = yes
+	option = {
+		name = "EVTOPTA60020"
+		government = bourgeois_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = underground_parties
+		social_reform = no_minimum_wage
+		social_reform = no_work_hour_limit
+		social_reform = no_safety
+		social_reform = no_subsidies
+		social_reform = no_pensions
+		social_reform = no_health_care
+		country_event = 800053
+	}
+}
+
+country_event = {
+	id = 60030
+	title = "EVTNAME60030"
+	desc = "EVTDESC60030"
+	news = yes
+	news_title = "EVTNAME60030_NEWS_TITLE"
+	news_desc_long = "EVTDESC60030_NEWS_LONG"
+	news_desc_medium = "EVTDESC60030_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60030_NEWS_SHORT"
+	picture = "Fascist"
+	
+	trigger = {
+		is_vassal = no
+		civilized = yes
+		NOT = { government = fascist_dictatorship }
+		ruling_party_ideology = fascist
+		average_militancy = 3
+		OR = {
+			num_of_revolts = 1
+			national_provinces_occupied = .10
+			is_disarmed = yes
+			fascist = 20
+			average_militancy = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.8
+			average_militancy = 4
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.8
+			average_militancy = 6
+		}
+		modifier = {
+			factor = 0.5
+			revolt_percentage = .25
+		}
+	}
+	major = yes
+	option = {
+		name = "EVT60030OPTA"
+		government = fascist_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		prestige = -25	
+		country_event = 800051
+	}
+}
+
+country_event = {
+	id = 60050
+	title = "EVTNAME60050"
+	desc = "EVTDESC60050"
+	news = yes
+	news_desc_long = "EVTDESC60050_NEWS_LONG"
+	news_desc_medium = "EVTDESC60050_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60050_NEWS_SHORT"
+	picture = "senate_debate"
+	
+	trigger = {
+		OR = {
+			government = proletarian_dictatorship
+			government = presidential_dictatorship
+			government = bourgeois_dictatorship
+			government = fascist_dictatorship
+		}
+		civilized = yes
+		NOT = { vote_franschise = none_voting }
+		NOT = { political_parties = underground_parties }
+		NOT = { upper_house_composition = party_appointed }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	major = yes
+	option = {
+		name = "EVTOPTA60050"
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		set_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		remove_country_modifier = fight_the_power
+		government = democracy
+		election = yes
+	}
+}
+
+country_event = {
+	id = 60040
+	title = "EVTNAME60040"
+	desc = "EVTDESC60040"
+	picture = "Monarchy"
+	
+	trigger = {
+		OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+		}
+		civilized = yes	
+		vote_franschise = none_voting
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA60040"
+		clr_country_flag = communist_gov
+		set_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		government = absolute_monarchy
+	}
+}
+
+country_event = {
+	id = 60060
+	title = "EVTNAME60060"
+	desc = "EVTDESC60060"
+	news = yes
+	news_title = "EVTNAME60060_NEWS_TITLE"
+	news_desc_long = "EVTDESC60060_NEWS_LONG"
+	news_desc_medium = "EVTDESC60060_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60060_NEWS_SHORT"
+	picture = "Monarchy"
+	
+	trigger = {
+		government = absolute_monarchy
+		NOT = { vote_franschise = none_voting }		
+		civilized = yes	
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTNAME60060"
+		government = prussian_constitutionalism
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		set_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+	}
+}
+
+country_event = {
+	id = 60070
+	title = "EVTNAME60070"
+	desc = "EVTDESC60070"
+	news = yes
+	news_title = "EVTNAME60070_NEWS_TITLE"
+	news_desc_long = "EVTDESC60070_NEWS_LONG"
+	news_desc_medium = "EVTDESC60070_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60070_NEWS_SHORT"
+	picture = "Monarchy"
+	
+	trigger = {
+		OR = {
+		government = prussian_constitutionalism
+		government = theocracy
+		}
+		OR = {
+			political_parties = secret_ballots
+			political_parties = non_secret_ballots
+		}
+		civilized = yes
+		OR = {
+			vote_franschise = universal_weighted_voting
+			vote_franschise = universal_voting
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA60070"
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		set_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+		government = hms_government
+	}
+}
+
+country_event = {
+	id = 60080
+	title = "EVTNAME60080"
+	desc = "EVTDESC60080"
+	news = yes
+	news_title = "EVTNAME60080_NEWS_TITLE"
+	news_desc_long = "EVTDESC60080_NEWS_LONG"
+	news_desc_medium = "EVTDESC60080_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60080_NEWS_SHORT"
+	picture = "communist_crowd"
+	
+	trigger = {
+		government = democracy
+		vote_franschise = none_voting		
+		OR = {
+			ruling_party_ideology = conservative
+			ruling_party_ideology = reactionary
+			ruling_party_ideology = liberal
+			ruling_party_ideology = socialist
+		}
+		civilized = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	major = yes
+	option = {
+		name = "EVT60080OPTA"
+		government = presidential_dictatorship
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		set_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+	}
+}
+
+country_event = {
+	id = 60090
+	title = "EVTNAME60110"
+	desc = "EVTDESC60080"
+	news = yes
+	news_title = "EVTNAME60080_NEWS_TITLE"
+	news_desc_long = "EVTDESC60080_NEWS_LONG"
+	news_desc_medium = "EVTDESC60080_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60080_NEWS_SHORT"
+	picture = "communist_crowd"
+	
+	trigger = {
+		government = democracy
+		vote_franschise = none_voting
+		ruling_party_ideology = anarcho_liberal
+		civilized = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	major = yes
+	option = {
+		name = "EVT60090OPTA"
+		government = bourgeois_dictatorship
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		set_country_flag = anarcho_liberal_gov
+	}
+}
+
+country_event = {
+	id = 60100
+	title = "EVTNAME60110"
+	desc = "EVTDESC60080"
+	news = yes
+	news_title = "EVTNAME60080_NEWS_TITLE"
+	news_desc_long = "EVTDESC60080_NEWS_LONG"
+	news_desc_medium = "EVTDESC60080_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60080_NEWS_SHORT"
+	picture = "communist_crowd"
+	
+	trigger = {
+		government = democracy
+		vote_franschise = none_voting
+		ruling_party_ideology = communist
+		civilized = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	major = yes
+	option = {
+		name = "EVT60100OPTA"
+		government = proletarian_dictatorship
+		set_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		clr_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+	}
+}
+
+country_event = {
+	id = 60110
+	title = "EVTNAME60110"
+	desc = "EVTDESC60080"
+	news = yes
+	news_title = "EVTNAME60080_NEWS_TITLE"
+	news_desc_long = "EVTDESC60080_NEWS_LONG"
+	news_desc_medium = "EVTDESC60080_NEWS_MEDIUM"
+	news_desc_short = "EVTDESC60080_NEWS_SHORT"
+	picture = "communist_crowd"
+	
+	trigger = {
+		government = democracy
+		vote_franschise = none_voting
+		ruling_party_ideology = fascist
+		civilized = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	major = yes
+	option = {
+		name = "EVT60110OPTA"
+		government = fascist_dictatorship
+		clr_country_flag = communist_gov
+		clr_country_flag = absolute_monarchy_gov
+		clr_country_flag = semi_constitutional_monarchy_gov
+		clr_country_flag = constitutional_monarchy_gov
+		clr_country_flag = democracy_gov
+		clr_country_flag = presidential_dictatorship_gov
+		set_country_flag = fascist_gov
+		clr_country_flag = anarcho_liberal_gov
+	}
+}
+
+# Annex SoIs
+country_event = {
+	id = 60120
+	title = "EVTNAME60120"
+	desc = "EVTDESC60120"
+	picture = "greatpowers"
+	
+	trigger = {
+		ai = yes
+		war = no
+		part_of_sphere = yes
+		sphere_owner = {
+			is_greater_power = yes
+			is_culture_group = THIS
+			is_cultural_union = yes
+			war = no
+		}
+		OR = {
+			is_vassal = no
+			AND = {
+				is_vassal = yes
+				sphere_owner = { is_our_vassal = THIS }
+			}
+		}
+		OR = {
+			sphere_owner = { state_n_government = 1 }
+			NOT = { is_culture_group = american_cultures }
+		}
+		OR = {
+			NOT = { tag = BAN }
+			sphere_owner = { neighbour = THIS }
+		}
+		NOT = {
+			tag = KUK
+			tag = AUS
+			tag = DNB
+			tag = CSA
+			tag = FSA
+			tag = UIL
+			tag = UNB
+		}
+		NOT = { has_country_flag = post_colonial_country }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "EVTOPTA60120"
+		sphere_owner = {
+			country_event = 60130
+		}
+	}
+}
+
+# Get them Annexed
+country_event = {
+	id = 60130
+	title = "EVTNAME60130"
+	desc = "EVTDESC60130"
+	picture = "greatpowers"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA60130"
+		prestige = 5
+		random_country = {
+			limit = {
+				tag = FROM
+				civilized = no
+				THIS = { civilized = yes }
+			}
+			civilized = yes
+		}
+		inherit = FROM
+		ai_chance = {
+			factor = 95
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB60130"
+		clr_country_flag = crown_from_the_gutter
+		any_pop = {
+			militancy = 0.1
+		}
+		FROM = {
+			set_country_flag = does_not_want_to_unify
+			any_pop = {
+				limit = { is_primary_culture = yes }
+				scaled_militancy = {
+					ideology = reactionary
+					factor = 3
+				}
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+country_event = {
+	id = 60140
+	title = "EVTNAME60140"
+	desc = "EVTDESC60140"
+	picture = "Administration"
+	
+	trigger = {
+		civilized = yes
+		upper_house_composition = party_appointed
+		OR = {
+			ruling_party_ideology = liberal
+			ruling_party_ideology = socialist
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA60140"
+		political_reform = appointed
+	}
+}
+
+country_event = {
+	id = 60150
+	title = "EVTNAME60150"
+	desc = "EVTDESC60150"
+	picture = "Unite"
+	
+	trigger = {
+		has_country_modifier = female_suffrage
+		NOT = { vote_franschise = universal_weighted_voting }
+		NOT = {	vote_franschise = universal_voting }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA60150"
+		war_exhaustion = 5
+		remove_country_modifier = female_suffrage
+	}
+}
+
+# handling insolvent AI countries that cannot borrow money
+
+country_event = {
+	id = 60165
+	title = "EVTNAME60165"
+	desc = "EVTDESC60165"
+	picture = "bankruptcy"
+	
+	trigger = {
+		ai = yes
+		civilized = yes
+		OR = {
+			has_country_modifier = in_bankrupcy
+			has_country_modifier = generalised_debt_default
+			AND = {
+				civilized = no
+				NOT = { finance_reform = finance_reform_two }
+			}
+		}
+		NOT = {
+			money = 10
+			has_country_modifier = emergency_tax_measures1
+			has_country_modifier = emergency_tax_measures2
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVT60165OPTA"
+		add_country_modifier = {
+			name = emergency_tax_measures1
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = 60166
+	title = "EVTNAME60166"
+	desc = "EVTDESC60166"
+	picture = "bankruptcy"
+	
+	trigger = {
+		ai = yes
+		civilized = yes
+		has_country_modifier = emergency_tax_measures1
+		NOT = { money = 10 }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "EVT60165OPTA"
+		remove_country_modifier = emergency_tax_measures1
+		add_country_modifier = {
+			name = emergency_tax_measures2
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = 60167
+	title = "EVTNAME60167"
+	desc = "EVTDESC60167"
+	picture = "bankruptcy"	
+	
+	trigger = {
+		OR = {
+			has_country_modifier = emergency_tax_measures1
+			has_country_modifier = emergency_tax_measures2
+		}
+		OR = {
+			ai = no
+			money = 10
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.01
+			ai = no
+		}
+	}
+	
+	option = {
+		name = "EVT60167OPTA"
+		remove_country_modifier = emergency_tax_measures1
+		remove_country_modifier = emergency_tax_measures2
+	}
+}
+
+#Setting the flags for the health reforms
+country_event = {
+	id = 6016800
+	title = "EVTNAME6016800"
+	desc = "EVTDESC6016800"
+	picture = "rise_of_modern_medicine"
+	
+	allow_multiple_instances = no
+	
+	trigger = {
+		OR = {
+		AND = {
+			ai = yes
+			NOT = { has_country_flag = medicine_invented }
+			medicine = 1
+			}
+		AND = {
+		ai = yes
+		any_neighbor_country = {
+			ai = no
+			NOT = { has_country_flag = medicine_invented }
+			medicine = 1
+			}
+		}
+		AND = {
+		ai = no
+		NOT = { has_country_flag = medicine_invented }
+		medicine = 1
+		NOT = { any_neighbor_country = { ai = yes } }
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT6016800PTA"
+		set_country_flag = medicine_invented
+		any_country = {
+			limit = { 
+			NOT = { has_country_flag = medicine_invented }
+			medicine = 1 }
+		set_country_flag = medicine_invented
+		}
+	}
+}
+
+country_event = {
+	id = 6016801
+	title = "EVTNAME6016800"
+	desc = "EVTDESC6016800"
+	picture = "rise_of_modern_medicine"
+	
+	allow_multiple_instances = no
+	
+	trigger = {
+		OR = {
+		AND = {
+			ai = yes
+			NOT = { has_country_flag = germs_invented }
+			invention = germ_theory
+			}
+		AND = {
+		ai = yes
+		any_neighbor_country = {
+			ai = no
+			NOT = { has_country_flag = germs_invented }
+			invention = germ_theory
+			}
+		}
+		AND = {
+		ai = no
+		NOT = { has_country_flag = germs_invented }
+		invention = germ_theory
+		NOT = { any_neighbor_country = { ai = yes } }
+			}
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT6016800PTA"
+		set_country_flag = germs_invented
+		any_country = {
+			limit = { 
+			NOT = { has_country_flag = germs_invented }
+			invention = germ_theory }
+		set_country_flag = germs_invented
+		}
+	}
+}
+
+country_event = {
+	id = 6016802
+	title = "EVTNAME6016800"
+	desc = "EVTDESC6016800"
+	picture = "rise_of_modern_medicine"
+	
+	allow_multiple_instances = no
+	
+	trigger = {
+		OR = {
+		AND = {
+			ai = yes
+			NOT = { has_country_flag = gaslights_invented }
+			invention = gaslights
+			}
+		AND = {
+		ai = yes
+		any_neighbor_country = {
+			ai = no
+			NOT = { has_country_flag = gaslights_invented }
+			invention = gaslights
+			}
+		}
+		AND = {
+		ai = no
+		NOT = { has_country_flag = gaslights_invented }
+		invention = gaslights
+		NOT = { any_neighbor_country = { ai = yes } }
+			}
+		}
+	}	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT6016800PTA"
+		set_country_flag = gaslights_invented
+		any_country = {
+			limit = { 
+			NOT = { has_country_flag = gaslights_invented }
+			invention = gaslights }
+		set_country_flag = gaslights_invented
+		}
+	}
+}
+
+country_event = {
+	id = 6016803
+	title = "EVTNAME6016800"
+	desc = "EVTDESC6016800"
+	picture = "rise_of_modern_medicine"
+	
+	allow_multiple_instances = no
+	
+	trigger = {
+		OR = {
+		AND = {
+			ai = yes
+			NOT = { has_country_flag = electricity_invented }
+			electricity = 1
+			}
+		AND = {
+		ai = yes
+		any_neighbor_country = {
+			ai = no
+			NOT = { has_country_flag = electricity_invented }
+			electricity = 1
+			}
+		}
+		AND = {
+		ai = no
+		NOT = { has_country_flag = electricity_invented }
+		electricity = 1
+		NOT = { any_neighbor_country = { ai = yes } }
+			}
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT6016800PTA"
+		set_country_flag = electricity_invented
+		any_country = {
+			limit = { 
+			NOT = { has_country_flag = electricity_invented }
+			electricity = 1 }
+		set_country_flag = electricity_invented
+		}
+	}
+}
+
+country_event = {
+
+	id = 6016804
+	title = "EVTNAME6016803"
+	desc = "EVTDESC6016803"
+	picture = "polish_uprising_aus"
+	
+	trigger = {
+		NOT = {
+		OR = {
+			tag = AUS
+			tag = KUK
+			tag = RUS
+			}
+		}
+		any_owned_province = { has_pop_type = serfs }
+		NOT = { debt_law = serfdom }
+	}
+		
+	mean_time_to_happen = { days = 30 } 
+	
+	option = {
+		name = "EVT60055557OPTA"
+		any_pop = {
+			limit = {
+			OR = {
+			pop_type = farmers
+			pop_type = labourers
+			pop_type = serfs
+				}
+			}
+		money = 1
+		consciousness = -5
+		militancy = -4
+		}
+		any_owned = { limit = { state_scope = { has_pop_type = serfs } }
+			any_pop = { limit = { type = aristocrats }
+			consciousness = 7
+			militancy = 4
+			money = -50
+			}
+		}
+		any_pop = { limit = { type = serfs } pop_type = farmers }
+		ai_chance = { factor = 80 }
+	}
+		
+	option = {
+		name = "EVT60055557OPTB"
+		any_pop = {
+			limit = {
+			OR = {
+			pop_type = farmers
+			pop_type = labourers
+			pop_type = serfs
+				}
+			}
+		consciousness = 6
+		militancy = 2
+		}
+		any_owned = { limit = { state_scope = { has_pop_type = serfs } }
+			any_pop = { limit = { type = aristocrats }
+			consciousness = -8
+			militancy = -1
+				}
+			}
+		any_pop = { limit = { type = serfs } pop_type = farmers }
+		ai_chance = { factor = 20 }
+		}
+		
+	option = {
+		name = "EVT60055557OPTC"
+		any_pop = {
+			limit = {
+			OR = {
+			pop_type = farmers
+			pop_type = labourers
+			pop_type = serfs
+				}
+			}
+		money = 1
+		consciousness = -2
+		militancy = -1
+			}
+		any_owned = { limit = { state_scope = { has_pop_type = serfs } }
+			any_pop = { limit = { type = aristocrats }
+				money = 50
+				consciousness = 2
+				}
+			}
+		add_tax_relative_income = -0.75
+		any_pop = { limit = { type = serfs } pop_type = farmers }
+		ai_chance = { factor = 0 }
+		}
+	}
+

@@ -1,0 +1,513 @@
+#Italian Conquest of Libya (fires if the Berlin Congress has happened and Turkey is not a GP) by Anon
+
+country_event = {
+
+	id = 900000
+	
+	title = "EVTNAME900000"
+	desc = "EVTDESC900000"
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		
+		tag = ITA
+		mass_politics = 1
+		OR = {
+			AND = {
+			is_greater_power = yes
+			is_subject = no
+			war = no
+			has_global_flag = ottmans_supported
+				}
+		has_global_flag = balkans_supported
+			}
+		
+		LBY = {exists = no}
+		
+		TUR = {
+			is_greater_power = no
+			any_owned_province = {
+				is_core = TRI
+				is_core = CYR
+				}
+			}
+		
+		1735 = {is_colonial = yes}
+		1742 = {is_colonial = yes}
+		
+		}
+		
+	mean_time_to_happen = {months = 10}
+		
+	option = {
+
+		name = "EVT900000OPTA"
+		prestige = 10
+		set_global_flag = italian_ultimatum_sent
+		TUR = {country_event = 900001}			
+		ai_chance = {
+			factor = 85
+			}
+		}	
+	
+	option = {
+		
+		name = "EVT900000OPTB"
+		prestige = -20
+		
+		
+		ai_chance = {
+			factor = 15
+			}
+		}
+	}		
+		
+country_event = {
+
+id = 900001
+	
+	title = "EVTNAME900001" #Initial Turkish response 
+	desc = "EVTDESC900001"
+	picture = "italoturk"
+	
+	is_triggered_only = yes
+		
+	
+	option = {
+		
+	name = "EVT900001OPTA"
+	prestige = 5
+	
+	ITA = {
+		country_event = 900002
+		}
+		
+	ai_chance = {factor = 85}
+	
+	}
+		
+	option = {
+	
+	name = "EVT900001OPTB"
+	prestige = 20
+	
+	ITA = {
+		country_event = 900007
+		}
+		
+	ai_chance = {factor = 15}
+		}
+}
+	
+	
+country_event = {
+
+	id = 900002
+	
+	title = "EVTNAME900002"
+	desc = "EVTDESC900002"
+	picture = "italoturk"
+
+	is_triggered_only = yes
+		
+	option = {
+	
+	name = "EVT900002OPTA"
+	prestige = 5
+	
+	TUR = {country_event = 900005}
+	
+	ai_chance = {factor = 15}
+		
+	}
+	
+	option = {
+	
+	name = "EVT900002OPTB"
+	prestige = 10
+	badboy = 10
+	
+	TUR = {country_event = 900006}
+	
+	ai_chance = {factor = 85}
+	
+	}
+}
+
+country_event = {
+	id = 900005
+	
+	title = "EVTNAME900005"
+	desc = "EVTDESC900005"
+	picture = "italoturk_peace"
+	
+	is_triggered_only = yes
+	
+	option = {
+	
+	name = "EVT900005OPTA"
+	
+		
+	random_owned = {
+			limit = {
+				province_id = 1731
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}
+	
+	random_owned = {
+			limit = {
+				province_id = 1732
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}	
+	
+	random_owned = {
+			limit = {
+				province_id = 1733
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}	
+				
+	random_owned = {
+			limit = {
+				province_id = 1734
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}	
+
+	random_owned = {
+			limit = {
+				province_id = 1735
+				owned_by = TUR
+				}
+				secede_province = CYR
+				}				
+	random_owned = {
+			limit = {
+				province_id = 1736
+				owned_by = TUR
+				}
+				secede_province = CYR
+				}
+
+	random_owned = {
+			limit = {
+				province_id = 1737
+				owned_by = TUR
+				}
+				secede_province = CYR
+				}
+	
+	random_owned = {
+			limit = {
+				province_id = 1741
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}
+
+
+	random_owned = {
+			limit = {
+				province_id = 1742
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}
+
+	random_owned = {
+			limit = {
+				province_id = 1743
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}
+
+	random_owned = {
+			limit = {
+				province_id = 1744
+				owned_by = TUR
+				}
+				secede_province = TRI
+				}				
+				
+				
+	TUR = {
+		create_vassal = TRI
+		create_vassal = CYR
+		}
+		
+	ITA = {
+		diplomatic_influence = { 
+			who = TRI
+			value = 150
+			}
+		diplomatic_influence = { 
+			who = CYR
+			value = 150
+			}
+		relation = {
+			who = TRI
+			value = 200
+			}
+		relation = {
+			who = CYR
+			value = 200
+			}
+		}
+			
+	}
+}
+
+country_event = {
+
+id = 900006
+
+is_triggered_only = yes
+
+title = "EVTNAME900006"
+desc = "EVTDESC900006"
+picture = "italoturk2"
+
+	option = {
+	
+		name = "EVT900006OPTA"
+		prestige = 10
+		
+		ai_chance = {factor = 70}
+	
+		ITA = {country_event = 900007}
+	}
+	
+	option = {
+
+		name = "EVT900006OPTB"
+		prestige = -25
+		
+		ai_chance = {factor = 30}
+		
+		ITA = {country_event = 900008}
+		
+		
+			random_owned = {
+			limit = {
+				province_id = 1731
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+	
+			random_owned = {
+			limit = {
+				province_id = 1732
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}	
+	
+			random_owned = {
+			limit = {
+				province_id = 1733
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}	
+				
+			random_owned = {
+			limit = {
+				province_id = 1734
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}	
+
+			random_owned = {
+			limit = {
+				province_id = 1735
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}				
+			random_owned = {
+			limit = {
+				province_id = 1736
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+
+			random_owned = {
+			limit = {
+				province_id = 1737
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+	
+			random_owned = {
+			limit = {
+				province_id = 1741
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+
+
+			random_owned = {
+			limit = {
+				province_id = 1742
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+
+			random_owned = {
+			limit = {
+				province_id = 1743
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+
+			random_owned = {
+			limit = {
+				province_id = 1744
+				owned_by = TUR
+				}
+				secede_province = ITA
+				}
+		}
+}
+
+country_event = {
+
+id = 900007
+
+is_triggered_only = yes
+
+title = "EVTNAME900007"
+desc = "EVTDESC900007"
+picture = "italoturk2"
+
+	option = {
+		name = "EVT900007OPTA"
+		
+		set_global_flag = italy_fights_turk
+		war = {
+			target = TUR
+			
+			attacker_goal = {
+				casus_belli = place_in_the_sun
+				
+				state_province_id = 1731
+								
+				}
+			
+			attacker_goal = {
+				casus_belli = place_in_the_sun
+				state_province_id = 1742
+			}
+			
+			attacker_goal = {
+				casus_belli = place_in_the_sun
+				state_province_id = 1735
+				}
+			
+		}
+	}
+				
+}
+
+	
+country_event = {
+
+id = 900008
+
+is_triggered_only = yes
+
+title = "EVTNAME900008"
+desc = "EVTDESC900008"
+picture = "italoturk_peace"
+news = yes
+news_desc_long = "EVTDESC900008_NEWS_MEDIUM"
+news_desc_medium = "EVTDESC900008_NEWS_MEDIUM"
+news_desc_short = "EVTDESC900008_NEWS_SHORT"
+
+
+	option = {
+	name = "EVT900008OPTA"
+	prestige = 30
+	
+	}
+}
+
+country_event = {
+
+id = 900009
+
+title = "EVTNAME900009"
+desc = "EVTDESC900009"
+picture = "italoturk_peace"
+news = yes
+news_desc_long = "EVTDESC900009_NEWS_MEDIUM"
+news_desc_medium = "EVTDESC900009_NEWS_MEDIUM"
+news_desc_short = "EVTDESC900009_NEWS_SHORT"
+
+trigger = {
+	
+	ITA = {
+		has_global_flag = italy_fights_turk
+		war = no
+		NOT = {has_global_flag = italian_vic_turk}
+		}
+		
+	1731 = {
+		owned_by = ITA
+		}
+	}
+	
+mean_time_to_happen = {months = 1}
+	
+option = {
+	name = "EVT900009OPTA"
+	prestige = 40
+	set_global_flag = italian_vic_turk
+	}
+}
+
+country_event = {
+
+id = 900010
+
+title = "EVTNAME900010"
+desc = "EVTDESC900010"
+picture = "italoturk2"
+
+trigger = {
+
+	TUR = {
+	has_global_flag = italy_fights_turk
+	war = no
+	NOT = {has_global_flag = italy_vic_turk}
+		}
+	
+	ITA = {
+	has_recently_lost_war = yes
+		}
+	}
+
+mean_time_to_happen = {months = 1}
+
+option = {
+	name = "EVT900010OPTA"
+	prestige = 40
+	set_global_flag = italian_lose_turk
+	}
+}

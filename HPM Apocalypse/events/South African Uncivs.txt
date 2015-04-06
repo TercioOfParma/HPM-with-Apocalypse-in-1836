@@ -1,0 +1,213 @@
+country_event = { #Zulu Military Advantage
+	id = 95515
+	title = "EVTNAME95515"
+	desc = "EVTDESC95515"
+	picture = "zulu_tactics"
+	
+	trigger = {
+		tag = ZUL
+		civilized = no
+		}
+		
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT95515OPTA"
+		add_country_modifier = {
+			name = assegai
+			duration = -1
+			}
+		}
+	}
+
+country_event = { #Removing Zulu Military Advantage when they civilize
+	id = 95516
+	title = "EVTNAME95516"
+	desc = "EVTDESC95516"
+	picture = "zulu_tactics"
+	
+	trigger = {
+		OR = {
+			tag = ZUL
+			tag = MAT
+			}
+		has_country_modifier = assegai
+		civilized = yes
+		}
+		
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT95516OPTA"
+		remove_country_modifier = assegai
+		}
+	}
+
+#Mzilikazi of Matabele flees to Matabeland
+country_event = {
+	id = 95517
+	title = "EVTNAME95517"
+	desc = "EVTDESC95517"
+	picture = "mzilikazi_flees"
+	
+	trigger = {
+		OR = {
+			MAT = { national_provinces_occupied = 0.75 }
+			2108 = { controlled_by = THIS }
+				AND = {
+				2108 = { country_units_in_province = THIS }
+				civilized = yes
+				}
+			}
+		
+		2069 = { empty = yes }
+		2071 = { empty = yes }
+		2072 = { empty = yes }
+		2073 = { empty = yes }
+		war_with = MAT
+		OR = {
+			2105 = { controlled_by = THIS }
+			2109 = { controlled_by = THIS }
+			2107 = { controlled_by = THIS }
+			}
+		}
+		
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT95517OPTA"
+		prestige = 10
+		MAT = { country_event = 95518 }
+		}
+	}
+	
+country_event = { #Mzilikazi of Matabele flees to Matabeland
+	id = 95518
+	title = "EVTNAME95518"
+	desc = "EVTDESC95518"
+	picture = "mzilikazi_flees"
+	
+	is_triggered_only = yes
+		
+	fire_only_once = yes
+		
+	option = {
+		name = "EVT95518OPTA"
+		2068 = { secede_province = MAT life_rating = 20 }
+		2069 = { secede_province = MAT life_rating = 20 }
+		2071 = { secede_province = MAT life_rating = 20 }
+		2072 = { secede_province = MAT life_rating = 20 }
+		2073 = { secede_province = MAT life_rating = 20 }
+		
+		2108 = {
+			any_pop = { limit = { culture = nguni }
+			reduce_pop = 0.8
+			}
+		}
+		
+		2071 = {
+		any_pop = { limit = { culture = nguni }
+			reduce_pop = 1.2
+			}
+		state_scope = { change_region_name = "Matabeleland" }
+		}
+
+		MAT = {
+		capital = 2071
+		add_country_modifier = {
+			name = assegai
+			duration = -1
+				}
+			}
+		any_owned = {
+			limit = {
+			OR = {
+			province_id = 2105
+			province_id = 2106
+			province_id = 2107
+			province_id = 2108
+			province_id = 2109
+				}
+			}
+			secede_province = FROM 
+			}
+			end_war = FROM
+		}
+	}
+	
+	
+country_event = { #The Mfecane
+	id = 95519
+	title = "EVTNAME95519"
+	desc = "EVTDESC95519"
+	picture = "mfecane"
+	
+	trigger = {
+		tag = MAT
+		war = no
+		year = 1836
+		owns = 2110
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 10 }
+	
+	option = {
+		name = "EVT95519OPTA"
+		any_pop = {
+			militancy = -9
+			consciousness = -9
+			}
+		2105 = { life_rating = 20 }
+		2106 = { life_rating = 15 }
+		2107 = { life_rating = 15 }
+		2108 = { life_rating = 15 }
+		2109 = { life_rating = 20 }
+		2110 = { life_rating = 20 }
+		random_list = {
+			33 = { any_pop = { 
+				limit = { 
+					NOT = { 
+					OR = {
+					culture = boer
+					culture = nguni
+						}
+					}
+				}
+				reduce_pop = 0.2
+					}
+				any_pop = { limit = { culture = nguni } reduce_pop = 0.7 }
+				}
+			33 = { any_pop = {
+				limit = {
+					NOT = { 
+					OR = {
+					culture = boer
+					culture = nguni
+						}
+					}
+				}
+				reduce_pop = 0.3
+					}
+				any_pop = { limit = { culture = nguni } reduce_pop = 0.8 }
+				}
+			33 = { any_pop = { 
+				limit = { 
+					NOT = { 
+					OR = {
+					culture = boer
+					culture = nguni
+						}
+					}
+				}
+				reduce_pop = 0.4
+					}
+				any_pop = { limit = { culture = nguni } reduce_pop = 0.9 }
+				}
+			}
+		}
+	}

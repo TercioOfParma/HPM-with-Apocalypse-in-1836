@@ -1,0 +1,48 @@
+##############Caucasian War Events - Add more
+
+country_event = {
+	id = 32513
+	title = "EVTNAME32513" #The Caucasian War
+	desc = "EVTDESC32513"
+	picture = "rebellion"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		CIR = { exists = no }
+		DAG = { exists = no }
+		OR = {
+			owns = 1055
+			owns = 1051
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = "EVT32513OPTA"
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 1051
+					province_id = 1052
+					province_id = 1053
+					province_id = 1055
+					province_id = 1056
+					province_id = 1057
+				}
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 9125
+			}
+			any_pop = {
+				limit = { is_primary_culture = no }
+				militancy = 9
+			}
+		}
+	}
+}
