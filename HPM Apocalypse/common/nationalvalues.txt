@@ -1,0 +1,48 @@
+nv_order = {
+	land_organisation = 0.05
+	mobilisation_size = 0.1
+	mobilisation_economy_impact = 0.75
+}
+
+nv_liberty = {
+	global_immigrant_attract = 0.05
+	political_reform_desire = 0.01
+	commerce_tech_research_bonus = 0.05
+	mobilisation_size = 0.01
+	mobilisation_economy_impact = 1.25
+}
+
+nv_equality = {
+	assimilation_rate = 0.05
+	social_reform_desire = 0.01
+	core_pop_militancy_modifier = -0.01
+	mobilisation_size = 0.01
+	mobilisation_economy_impact = 1.1
+}
+
+nv_autocracy = {
+	core_pop_consciousness_modifier = -0.01
+	ruling_party_support = 0.4
+	political_reform_desire = -0.15
+	mobilisation_size = 0.02
+	mobilisation_economy_impact = 1.0
+}
+
+nv_tradition = {
+	research_points = -0.25
+	core_pop_consciousness_modifier = -0.01
+	political_reform_desire = -0.25
+	social_reform_desire = -0.25
+	issue_change_speed = -0.25
+	mobilisation_size = 0.01
+	mobilisation_economy_impact = 1.0
+}
+
+nv_productivity = {
+	factory_throughput = 0.05
+	RGO_throughput = 0.05
+	artisan_throughput = 0.05
+	industry_tech_research_bonus = 0.01
+	mobilisation_size = 0.01
+	mobilisation_economy_impact = 0.75
+}

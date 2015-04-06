@@ -1,0 +1,158 @@
+# Triggered modifiers are here.
+# these are checked for each countries once/month and then applied.
+#
+# Effects are fully scriptable here.
+
+the_british_raj  = {
+	trigger = {
+		1227 = {
+			is_colonial = yes
+			owned_by = THIS
+		}
+		1236 = {
+			is_colonial = yes
+			owned_by = THIS
+		}
+		1251 = {
+			is_colonial = yes
+			owned_by = THIS
+		}
+		1297 = {
+			is_colonial = yes
+			owned_by = THIS
+		}
+	}
+	research_points = 1
+	prestige = 0.02
+	icon = 19
+}
+
+
+dutch_east_india = {
+	trigger = {
+		1413 = {
+			is_colonial = yes
+			owned_by = THIS
+		}
+		1418 = {
+			is_colonial = yes
+			owned_by = THIS
+		}
+	}
+	research_points = 0.5
+	prestige = 0.01
+	icon = 19
+}
+
+vassal_nation = {
+	trigger = {
+		is_vassal = yes
+	}
+	icon = 10
+	prestige = -0.1
+}
+
+chinese_substate = {
+	trigger = {
+		OR = {
+			substate_of = QNG
+			vassal_of = QNG
+		}
+		civilized = no
+		QNG = {	government = absolute_monarchy }
+	}
+	icon = 10
+	research_points_modifier = -0.2
+	global_pop_consciousness_modifier = 0.05
+}
+
+own_kiel_canal = {
+	trigger = {
+		owns = 369
+		civilized = yes
+		is_canal_enabled = 1
+	}
+	icon = 9
+	tariff_efficiency_modifier = 0.1
+}
+
+own_suez_canal = {
+	trigger = {
+		owns = 1755
+		civilized = yes
+		is_canal_enabled = 2
+	}
+	icon = 9
+	tariff_efficiency_modifier = 0.25
+	import_cost = -0.1
+	prestige = 0.01
+}
+
+own_panama_canal = {
+	trigger = {
+		owns = 1723
+		civilized = yes
+		is_canal_enabled = 3
+	}
+	icon = 9
+	tariff_efficiency_modifier = 0.5
+	import_cost = -0.25
+	prestige = 0.02
+}
+
+small_but_efficient = {
+	trigger = {
+			capital_scope = { continent = europe }
+			civilized = yes
+			num_of_cities = 1
+			NOT = { num_of_cities = 6 }
+			NOT = { total_pops = 300000 }
+			NOT = { money = 1000000 }
+			num_of_vassals = 0
+		}
+	icon = 9
+	import_cost = -0.1
+	tax_efficiency = 0.75
+	administrative_efficiency_modifier = 0.5
+	tariff_efficiency_modifier = 0.5
+	supply_consumption = -0.2
+	poor_life_needs = -0.25
+	middle_life_needs = -0.25
+	rich_life_needs = -0.25
+}
+
+sounds_dues_toll = {
+		trigger = {
+			owns = 372
+			owns = 373
+			NOT = { has_global_flag = sound_dues_cancelled }
+		}
+	tax_efficiency = 0.2
+	tariff_efficiency_modifier = 0.75
+	icon = 7
+}
+
+landlocked_nation = {
+		trigger = {
+			NOT = { total_num_of_ports = 1 }
+		}
+		
+	import_cost = 1
+	icon = 8
+}
+
+social_reformed_nation = {
+		trigger = {
+			wage_reform = good_minimum_wage
+			work_hours = eight_hours
+			safety_regulations = good_safety
+			unemployment_subsidies = good_subsidies
+			pensions = good_pensions
+			health_care = good_health_care
+			school_reforms = good_schools
+			penal_system = rehabilitation
+		}
+		
+	social_reform_desire = -0.2
+	icon = 13
+}
