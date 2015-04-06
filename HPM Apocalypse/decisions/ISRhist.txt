@@ -1,0 +1,49 @@
+political_decisions = {
+
+	 law_of_return = {
+	 picture = law_of_return
+	 	potential = {
+	 		tag = ISR
+	 		NOT = { has_global_flag = law_of_return_issued }
+	 	}
+	 
+	 	allow = {
+			nationalism_n_imperialism = 1
+	 		war = no
+	 		owns = 917
+	 	}
+	 
+	 	effect = {
+	 		set_global_flag = law_of_return_issued
+	 		any_country = { any_pop = { limit = { is_culture_group = jewish_cultures }
+	 		random_list = {
+	 			20 = {
+	 			move_pop = 917
+	 			}
+	 		
+	 			80 = {
+	 	
+	 				}
+	 			}
+	 		}
+	 	}
+	 		any_country = { any_pop = { limit = { has_pop_religion = jewish }
+	 		random_list = {
+	 			5 = {
+	 			move_pop = 917
+	 			}
+	 		
+	 			95 = {
+	 	
+	 				}
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 		ai_will_do = {
+	 			factor = 1
+	 		}
+	 	}
+	}
+	

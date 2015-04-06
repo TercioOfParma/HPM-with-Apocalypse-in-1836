@@ -1,0 +1,181 @@
+political_decisions = {
+	mediate_belgian_independence = {
+		picture = sign_treaty_of_london
+		potential = {
+			tag = ENG
+			is_greater_power = yes
+			BEL = { exists = yes }
+			NET = {
+				exists = yes
+				NOT = { any_owned_province = { is_core = BEL } }
+				NOT = { has_country_flag = signed_treaty_of_london }
+			}
+			NOT = { has_country_flag = mediated_belgian_independence }
+		}
+		
+		allow = {
+			NET = {
+				war = no
+				is_greater_power = no
+			}
+			BEL = {
+				war = no
+			}
+			OR = { 
+				relation = {
+					who = NET
+					value = 100
+				}
+				diplomatic_influence = {
+					who = NET
+					value = 60
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = mediated_belgian_independence
+			prestige = 10
+			NET = { country_event = 36709 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1839 }
+			}
+		}
+	}
+	
+	end_the_javanese_sultanates = {
+		picture = java_map
+		potential = {
+			tag = NET
+			JAV = { 
+				vassal_of = THIS 
+				exists = yes
+				civilized = no
+				}
+			NOT = { has_country_flag = javanese_integrated }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			has_global_flag = berlin_conference
+			}
+		
+		effect = {
+			set_country_flag = javanese_integrated
+			JAV = { country_event = 952500 }
+			badboy = 2
+		}
+		
+		ai_will_do = { 
+			factor = 1 
+			modifier = {
+			factor = 0
+			badboy = 0.95
+			}
+		}
+	}
+	
+	the_short_declaration = {
+		picture = moluccan_map
+		potential = {
+			tag = NET
+			MAL = { 
+				vassal_of = THIS 
+				exists = yes
+				civilized = no
+				}
+			NOT = { has_country_flag = tidore_integrated }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			has_global_flag = berlin_conference
+			}
+		
+		effect = {
+			set_country_flag = tidore_integrated
+			MAL = { any_pop = { consciousness = 3 militancy = 1 } }
+			SAK = { any_pop = { consciousness = 3 militancy = 1 } }
+			inherit = MAL
+			inherit = SAK
+			badboy = 4
+		}
+		
+		ai_will_do = { 
+			factor = 1 
+			modifier = {
+			factor = 0
+			badboy = 0.9
+			}
+		}
+	}
+	
+	the_aceh_question = {
+		picture = the_aceh
+		potential = {
+			tag = NET
+			colonial_nation = yes
+			is_canal_enabled = 2
+			ATJ = {
+				exists = yes
+				part_of_sphere = yes
+				civilized = no
+			}
+			NOT = { has_global_flag = gold_coast_treaty }
+			ATJ = { neighbour = NET }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			}
+		
+		effect = {
+			ATJ = { sphere_owner = { country_event = 952503 } }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+	
+	embrace_the_boer = {
+		picture = embrace_the_boer
+		potential = {
+			tag = NET
+			NOT = { has_country_flag = boer_accepted }
+			any_owned_province = { 
+			OR = {
+				is_core = SAF
+				is_core = NAL
+				is_core = TRN
+				is_core = ORA
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+			money = 10000
+			any_owned_province = { has_pop_culture = boer }
+			}
+		
+		effect = {
+			set_country_flag = boer_accepted
+			treasury = -10000
+			add_accepted_culture = boer
+			any_pop = { limit = { culture = boer }
+				militancy = -7
+				consciousness = -4
+				money = 10
+				}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+}
