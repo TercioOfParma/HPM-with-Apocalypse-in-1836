@@ -1,0 +1,4 @@
+owner = MAL
+controller = MAL
+trade_goods = fish
+life_rating = 30

@@ -1,0 +1,6 @@
+owner = MCK
+controller = MCK
+add_core = QNG
+add_core = CHI
+trade_goods = iron
+life_rating = 32

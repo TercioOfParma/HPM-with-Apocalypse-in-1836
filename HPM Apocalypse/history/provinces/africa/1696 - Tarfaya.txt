@@ -1,0 +1,4 @@
+add_core = MOR
+trade_goods = fish
+terrain = coastal_desert
+life_rating = 10

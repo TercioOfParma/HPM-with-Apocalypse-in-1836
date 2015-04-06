@@ -1,0 +1,12 @@
+owner = GAZ
+controller = GAZ
+add_core = GAZ
+add_core = ZUL
+trade_goods = grain
+life_rating = 35
+1861.1.1 = {
+	owner = POR
+	controller = POR
+	add_core = TRN
+	colonial = 2
+}

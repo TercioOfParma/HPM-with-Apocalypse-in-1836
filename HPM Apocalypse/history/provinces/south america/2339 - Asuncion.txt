@@ -1,0 +1,9 @@
+owner = PRG
+controller = PRG
+add_core = PRG
+add_core = ARC
+trade_goods = cattle
+life_rating = 35
+1861.1.1 = { 
+	remove_core = ARC
+	}

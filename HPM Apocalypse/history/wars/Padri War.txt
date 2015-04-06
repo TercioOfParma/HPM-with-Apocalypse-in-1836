@@ -1,0 +1,25 @@
+name = "Padri War"
+
+1836.1.1 = {
+	add_attacker = NET
+	add_defender = ATJ
+	
+	# actor
+	# receiver
+	# casus_belli - cb type
+	# country - 3rd party
+	# state_province_id - target state capital
+	war_goal = {
+		casus_belli = demand_concession_casus_belli
+		actor = NET
+		receiver = ATJ
+		state_province_id = 1408
+	}
+	
+	war_goal = {
+		casus_belli = humiliate
+		actor = ATJ
+		receiver = NET
+	}
+
+}

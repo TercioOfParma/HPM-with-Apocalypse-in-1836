@@ -1,0 +1,56 @@
+TUR = {
+	value = 50
+}
+
+EGY = {
+	value = 60
+}
+
+GEL = {
+	value = 50
+}
+
+AWS = {
+	value = 60
+}
+
+HAR = {
+	value = 75
+}
+
+MAJ = {
+	value = 20
+}
+
+GON = {
+	value = 20
+}
+
+SHW = {
+	value = 20
+}
+
+TIG = {
+	value = 20
+}
+
+KAF = {
+	value = 20
+}
+
+army = {
+	name = "Army of the Warsangali Sultanate"
+	location = 1873	
+	regiment = {
+		name= "Shaykh's Guards"	
+		type = irregular
+		home = 1873
+	}
+	regiment = {
+		name= "Berbera Warriors"	
+		type = irregular
+		home = 1873
+	}
+}
+
+
